@@ -1,0 +1,113 @@
+COLUMN_NAMES = [
+    "checking_account_status",
+    "duration_months",
+    "credit_history",
+    "purpose",
+    "credit_amount",
+    "savings_account",
+    "employment_since",
+    "installment_rate",
+    "personal_status_sex",
+    "other_debtors",
+    "residence_since",
+    "property",
+    "age",
+    "other_installment_plans",
+    "housing",
+    "existing_credits",
+    "job",
+    "people_liable",
+    "telephone",
+    "foreign_worker",
+    "target",
+]
+
+TARGET_MAPPING = {
+    1: "good",
+    2: "bad",
+}
+
+CATEGORICAL_MAPPINGS = {
+    "checking_account_status": {
+        "A11": "less_than_0_dm",
+        "A12": "0_to_200_dm",
+        "A13": "greater_than_200_dm",
+        "A14": "no_checking_account",
+    },
+    "credit_history": {
+        "A30": "no_credits_or_all_paid",
+        "A31": "all_credits_paid",
+        "A32": "existing_credits_paid",
+        "A33": "delay_in_past",
+        "A34": "critical_account",
+    },
+    "purpose": {
+        "A40": "car_new",
+        "A41": "car_used",
+        "A42": "furniture_equipment",
+        "A43": "radio_tv",
+        "A44": "domestic_appliances",
+        "A45": "repairs",
+        "A46": "education",
+        "A47": "vacation",
+        "A48": "retraining",
+        "A49": "business",
+        "A410": "others",
+    },
+    "savings_account": {
+        "A61": "less_than_100_dm",
+        "A62": "100_to_500_dm",
+        "A63": "500_to_1000_dm",
+        "A64": "greater_than_1000_dm",
+        "A65": "unknown_or_no_savings",
+    },
+    "employment_since": {
+        "A71": "unemployed",
+        "A72": "less_than_1_year",
+        "A73": "1_to_4_years",
+        "A74": "4_to_7_years",
+        "A75": "greater_than_7_years",
+    },
+    "personal_status_sex": {
+        "A91": "male_divorced_separated",
+        "A92": "female_divorced_separated_married",
+        "A93": "male_single",
+        "A94": "male_married_widowed",
+        "A95": "female_single",
+    },
+    "other_debtors": {
+        "A101": "none",
+        "A102": "co_applicant",
+        "A103": "guarantor",
+    },
+    "property": {
+        "A121": "real_estate",
+        "A122": "building_society_or_life_insurance",
+        "A123": "car_or_other",
+        "A124": "unknown_or_no_property",
+    },
+    "other_installment_plans": {
+        "A141": "bank",
+        "A142": "stores",
+        "A143": "none",
+    },
+    "housing": {
+        "A151": "rent",
+        "A152": "own",
+        "A153": "for_free",
+    },
+    "job": {
+        "A171": "unemployed_unskilled_non_resident",
+        "A172": "unskilled_resident",
+        "A173": "skilled_employee_or_official",
+        "A174": "management_or_self_employed",
+    },
+    "telephone": {
+        "A191": "none",
+        "A192": "yes_registered",
+    },
+    "foreign_worker": {
+        "A201": "yes",
+        "A202": "no",
+    },
+}
