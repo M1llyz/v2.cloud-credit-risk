@@ -136,7 +136,10 @@ gold/
 
 > [!NOTE]
 > Deve ficar mais ou menos assim:
-> ![Cloud Storage Bucket](assets\cloudstorage_screenshot.png)
+
+<p align="left">
+<img src="assets\cloudstorage_screenshot.png" width="100%" alt="Bucket criado no Cloud Storage" />
+</p>
 
 ---
 
@@ -167,7 +170,10 @@ Configuração:
 
 > [!NOTE]
 > Depois de criar as views e tudo, deve ficar mais ou menos assim:
-> ![BigQuery](assets\bigquery2_screenshot.png)
+
+<p align="left">
+<img src="assets\bigquery2_screenshot.png" width="100%" alt="Dataset criado no BigQuery" />
+</p>
 
 
 ---
