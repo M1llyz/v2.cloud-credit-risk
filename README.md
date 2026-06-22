@@ -54,25 +54,9 @@ O pipeline realiza:
 
 ## 🏗️ Arquitetura
 
-```mermaid
-flowchart TD
-
-A[UCI German Credit Dataset]
-
---> B[🥉Bronze Layer<br>Raw Data]
-
-B --> C[🥈Silver Layer<br>Cleaned Data]
-
-C --> D[🥇Gold Layer<br>Analytical Aggregations]
-
-D --> E[Google Cloud Storage]
-
-D --> F[BigQuery]
-
-F --> G[Analytical Views]
-
-G --> H[Looker Studio Dashboard]
-```
+<p align="center">
+<img src="assets\diagram_architecture_pipeline.png" width="100%" alt="Diagrama da Arquitetura do Pipeline" />
+</p>
 
 ---
 
@@ -173,7 +157,7 @@ Antes de executar o projeto, é necessário ter instalado/criado:
 - Service Account com permissões adequadas
 
 > [!TIP]
-> Alguns desses eu ensino a criar/instalar mais abaixo :)
+> Alguns desses eu ensino a criar/instalar mais abaixo e também nos arquivos da pasta docs com mais detalhes :)
 
 ---
 
@@ -214,7 +198,7 @@ pip install -r requirements.txt
 
 ---
 
-## 4. Configurar credenciais
+### 4. Configurar credenciais
 
 📂 Criar a pasta:
 
@@ -236,14 +220,14 @@ credentials/
 
 ---
 
-## 5. Configuração da Google Cloud
+### 5. Configuração da Google Cloud
 
 > [!IMPORTANT]
-> Este projeto utiliza serviços da Google Cloud Platform.
+> Esse projeto utiliza serviços da Google Cloud Platform.
 >
 > Algumas operações podem gerar custos dependendo do volume processado e das configurações utilizadas na sua conta.
 >
-> Como dataset que usei possui apenas 1.000 registros, os custos tendem a ser praticamente nulos durante os testes (usei 0,1 centavo e isso é tão pouco que entra dentro do limite do free tier da GCP e ela nem fatura isso)
+> Como o dataset que usei possui apenas 1.000 registros, os custos tendem a ser praticamente nulos durante os testes (usei 0,1 centavo e isso é tão pouco que entra dentro do limite do free tier da GCP e ela nem fatura isso)
 >
 > Mas caso se sinta mais seguro, você pode criar um alerta caso chegue a um determinado orçamento (por exemplo $1). Pra isso, acesse o menu --> Faturamento --> Orçamentos e Alertas e crie um pra que seja avisado por e-mail.
 
@@ -375,7 +359,7 @@ age_risk_summary.parquet
 
 ## 🔍 BigQuery e Views Analíticas
 
-Após o carregamento o projeto cria as tabelas no Cloud Store, então podemos criar as views pro consumo analitico:
+Após o carregamento o projeto cria as tabelas no Cloud Storege, assim podemos criar as views pro consumo analitico:
 
 ### Tabelas
 
@@ -398,7 +382,7 @@ Após o carregamento o projeto cria as tabelas no Cloud Store, então podemos cr
 > [!IMPORTANT]
 > As views não são criadas automaticamente. 
 >
->É necessário criar manualmente no BigQuery e serão usadas para análises e visualizações no Data Studio (antigo Looker) posteriormente, além de servir como base para as consultas SQL de exemplo que disponibilizei em 'sql/sample_questions.sql'. 
+>É necessário criar manualmente no BigQuery, onde serão usadas para análises e visualizações no Data Studio (antigo Looker), além de servir como base para as consultas SQL de exemplo que disponibilizei em 'sql/sample_questions.sql'. 
 >
 >Preferi não criar um script Python pra isso porque queria aprender a mexer mais no BigQuery mesmo, mas se você quiser automatizar, fique à vontade! :)
 >
